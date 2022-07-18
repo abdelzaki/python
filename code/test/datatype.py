@@ -1,13 +1,10 @@
+from collections import defaultdict
+
 """
 #######################################
 ##############  list  #################
 #######################################
 """
-
-
-from collections import defaultdict
-#from typing import DefaultDict
-
 
 def listOperation():
     list1 = [1]
@@ -25,12 +22,26 @@ def listOperation():
     print("List with initial values ")
     list3 = [0] * 26
     print(list3)
+    print("List with values ")
+    freq = [i for i in range(5)]
+    print(freq)
+    print(list3)
     print("Append to an empty list ")
     list4 = []
     list4.append(1)
+    list4.append(2)
     print(list4)
+    print("Get the index of an element")
+    print(list4.index(2))
+    print("To copy a list ")
+    list5 = list4[0:1]
+    print(list5)
 
-
+"""
+#######################################
+############  Dictionary  #############
+#######################################
+"""
 def dictionaryOperation():
 
     dictionary = {}  # Declare an dictionary
@@ -69,4 +80,4 @@ def dictionaryOperation():
                 print(element)
 
 
-dictionaryOperation()
+listOperation()
