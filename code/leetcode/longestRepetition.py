@@ -7,7 +7,7 @@ def characterReplacement(s: str, k: int) -> int:
         charDict[char] = charDict.get(char, 0) + 1
         maxNumber = max(maxNumber, charDict.get(char))
         if (r - l + 1) - maxNumber > k:
-            charDict[char] -= 1
+            charDict[s[r]] -= 1
             l += 1
         maxLength = max(maxNumber,r-l +1)
     return maxLength
