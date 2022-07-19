@@ -92,5 +92,12 @@ def setOperation():
     if 1 in set1:
         print("if 1 in set1", set1)
    
-    
-setOperation()
+def algorithum():
+    list1 = [1,4,0,12,2,100,5]
+    print("To sort algorithum")
+    list2 = sorted(list1)
+    print("sorted(list1) " , list2)
+    print("To iterate with index and value")
+    for i, val in enumerate(list1):
+        print(i," : ", val)
+algorithum()
