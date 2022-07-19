@@ -79,5 +79,18 @@ def dictionaryOperation():
             for element in listelements:
                 print(element)
 
-
-listOperation()
+"""
+#################################
+############  set  1#############
+#################################
+"""
+def setOperation():
+    print("To add an element in the set")
+    set1 = set()
+    print("set.add(1)", set1.add(1))
+    print("To check if an element exist in the set")
+    if 1 in set1:
+        print("if 1 in set1", set1)
+   
+    
+setOperation()
