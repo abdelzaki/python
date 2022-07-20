@@ -14,8 +14,9 @@ def isValid(s: str) -> bool:
                 return False
         else:
             stack.append(shape)
-    if len(stack) == 0:
+    if not stack:
         return True
-        
+
+
 s = "()[]{}"
 print(isValid(s))
