@@ -16,7 +16,7 @@ class Solution:
             arrayLinkedList.append(current)
             current = current.next
         l = 1
-        r = len(arrayLinkedList) 
+        r = len(arrayLinkedList)
         if r < 2:
             return head
         current = head
@@ -25,14 +25,15 @@ class Solution:
             current.next = arrayLinkedList[r]
             current = current.next
             current.next = arrayLinkedList[l]
-            prev = current
             current = current.next
             l += 1
-        prev.next = None
+        arrayLinkedList[r].next = None
         node = head
         while node:
             print(node.val)
             node = node.next
+
+
 c6 = ListNode(6, None)
 c5 = ListNode(5, c6)
 c4 = ListNode(4, c5)
