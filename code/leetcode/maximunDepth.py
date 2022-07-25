@@ -11,6 +11,7 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if root == 0:
-            return
+        if root == None:  # base case
+            return 0
+        # recursion
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1

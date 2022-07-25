@@ -11,18 +11,13 @@ class TreeNode:
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        result: bool = True
 
-        def dfs(p, q):
+        if not (p or q):
+            return True
+        elif not (p and q) or p.val != q.val:
+            return False
 
-            if not (p or q):
-                return True
-            elif not (p and q) or p.val != q.val :
-                return False
-        
-            return True & dfs(p.left, q.left) & dfs(p.right, q.right)
-
-        return dfs(p, q)
+        return True & self.isSameTree(p.left, q.left) & self.isSameTree(p.right, q.right)
 
 
 node1_L1 = TreeNode(0)

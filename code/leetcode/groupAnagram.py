@@ -15,10 +15,9 @@ def groupAnaram(input:list[str]) -> list[list[str]]:
         for key in sorted(temp):
             tempstring+= str(key) + str(temp[key])
         items[tempstring].append(word)
-    print(items)
-    return items
-#strs = ["eat","tea","tan","ate","natt","bat"]
-strs = ["","","","b"]
-groupAnaram(strs)
+    return items.values()
+strs = ["eat","tea","tan","ate","natt","bat"]
+#strs = ["","","","b"]
+print(groupAnaram(strs))
 
 

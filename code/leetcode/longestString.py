@@ -20,6 +20,6 @@ def lengthOfLongestSubstring(s: str):
     return maxlength
 
 
-print("hi")
 
+s = "abcabcbb"
 print(lengthOfLongestSubstring(s))
