@@ -1,4 +1,4 @@
-from inspect import stack
+
 
 
 class MinStack:
@@ -10,8 +10,8 @@ class MinStack:
     def push(self, val: int) -> None:
         self.stack.append(val)
         minimalValue = min(
-            val, self.minimalValue if len(self.minvalueStack) > 0 else val)
-        self.minvalueStack.append(self.minimalValue)
+            val, self.minvalueStack[-1] if self.minvalueStack  else val)
+        self.minvalueStack.append(minimalValue)
 
     def pop(self) -> None:
         self.stack.pop()
@@ -22,3 +22,4 @@ class MinStack:
         return value
 
     def getMin(self) -> int:
+        return self.minvalueStack[-1] if self.minvalueStack else 0

@@ -1,10 +1,12 @@
-"""Given two strings s and t, return true if t is an anagram of s, and false otherwise."""
+"""Given two strings s and t,
+return true if t is an anagram of s, and false otherwise."""
 
 from collections import defaultdict
 from operator import truediv
 
 
 def isAnagram(s: str, t: str) -> bool:
+    """solution with sort"""
     # create two dictionary to store the data
     sdict, tdict = defaultdict(str), defaultdict(str)
     if len(s) != len(t):

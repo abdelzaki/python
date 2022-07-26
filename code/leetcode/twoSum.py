@@ -39,4 +39,3 @@ def twoSumMap(nums: list[int], target: int) -> list[int]:
 
 
 print(twoSumMap(nums, target))
-

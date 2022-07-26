@@ -9,11 +9,12 @@ def containsDuplicate(nums: list[int]) -> bool:
         if num not in numset:
             numset.add(num)
         else:
-            return False
-    return True
-nums = [1,2,3]
+            return True
+    return False
+
+
+nums = [1, 2, 3]
 print(containsDuplicate(nums))
-nums = [1,1,1,3,3,4,3,2,4,2]
+nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
 containsDuplicate(nums)
 print(containsDuplicate(nums))
-
