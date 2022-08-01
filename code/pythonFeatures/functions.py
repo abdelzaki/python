@@ -24,6 +24,24 @@ def makeElement(**kargs):
         print(" : ", v)
 
 
+###################################
+# function takes *var and k words #
+###################################
+def funct(*kargs, **kwargs):
+    # print the values
+    for arg in kargs:
+        print(arg)
+
+    # print dictionary
+    for kwarg in kwargs:
+        print(kwarg, " : ", kwargs[kwarg])
+
+    # print as tupe and as element
+    print(kargs, " : " ,*kargs)
+    print(kwargs, " : " ,*kwargs)
+
+funct(1,2,3, type=12, age=14)
+
 ############
 # callback #
 ############
@@ -33,6 +51,3 @@ def sum(x, y):
 
 def avg(callback, element):
     print(callback(*element))
-
-
-avg(callback=sum, element=(1, 2))
