@@ -1,0 +1,9 @@
+to install pip using this command:
+    -  py -m pip install --upgrade pip
+
+- brute force:
+    - it means to try every possible way to find the best way
+
+dynamic programming:
+    - it is a way of recursion 
+    

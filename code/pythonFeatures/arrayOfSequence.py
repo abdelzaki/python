@@ -39,6 +39,7 @@ def nameTuple():
 # using * + with sequence #
 ###########################
 def operationList():
+    # list use reference to store the data
     myarray = [1, 2, 3]
     myarry2 = [4, 5]
     myarray.append(myarry2)
@@ -50,6 +51,26 @@ def operationList():
     myArraywrongWay = [["_"]*3]*2
     myArraywrongWay[0][2] = 12
     print(myArraywrongWay)
+
+import copy
+class clsx():
+    def __init__(self) -> None:
+        self.myname = "ahmed"
+
+
+
+def listobj():
+    obj1 :clsx = clsx
+    obj1.myname = "abdel"
+    mylist : list[clsx] = list() 
+    mylist.append(obj1)
+    print(mylist[0].myname)
+    obj1.myname = "ahmed"
+    #print(obj1.myname)    
+    print(mylist[0].myname)
+    print(obj1.myname)
+
+listobj()
 
 
 ##############

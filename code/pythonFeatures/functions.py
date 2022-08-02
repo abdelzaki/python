@@ -37,10 +37,9 @@ def funct(*kargs, **kwargs):
         print(kwarg, " : ", kwargs[kwarg])
 
     # print as tupe and as element
-    print(kargs, " : " ,*kargs)
-    print(kwargs, " : " ,*kwargs)
+    print(kargs, " : ", *kargs)
+    print(kwargs, " : ", *kwargs)
 
-funct(1,2,3, type=12, age=14)
 
 ############
 # callback #

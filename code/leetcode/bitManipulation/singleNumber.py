@@ -14,6 +14,12 @@ class Solution:
             else:
                 uniqueset.remove(num)
         return uniqueset.pop()
+    
+    def xor(nums: list[int]) -> int:
+        result = 0
+        for num in nums:
+            result ^= num
+        return num
 
 
 nums = [2, 2, 1]

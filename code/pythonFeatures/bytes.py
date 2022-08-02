@@ -29,10 +29,10 @@ def basic():
         print(val)
 
 
-####################
-# Code and decode  #
-###################
-def codeDecode():
+#############################
+# hey to bytes & vice verse #
+#############################
+def hexByte():
     # to get the ascii code of a character
     print("ord('A') ", ord("A"))
     print("ord('A') ", format(ord("A"), 'x'))
@@ -43,5 +43,11 @@ def codeDecode():
     print(bytes("AB", "ascii").hex())
     # to loop throw bytes
     data = bytes(b"\xAf\01")
-    print(hex((data[0] & 0xf0)>>4))
-codeDecode()
+    print(hex((data[0] & 0xf0) >> 4))
+
+
+#################
+# code & decode #
+#################
+def codeDecode():
+    pass
