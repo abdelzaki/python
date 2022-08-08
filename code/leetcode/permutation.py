@@ -32,6 +32,30 @@ def checkInclusion(s1: str, s2: str) -> bool:
                 return True
     return False
 
+def checkInclusionFaster(s1: str, s2: str) -> bool:
+    l: int = 0
+    if not s1:
+        return True
+    if len(s1) > len(s2):
+        return False
+    s1Dict: dict[str, int] = dict()
+    s2Dict: dict[str, int] = dict()
+
+    for r in range(len(s1)):
+        s1Dict[s1[r]] = s1Dict.get(s1[r], 0) + 1
+        s2Dict[s2[r]] = s2Dict.get(s2[r], 0) + 1
+
+    for r in range(len(s1), len(s2)):
+        if s1Dict == s2Dict:
+            return True
+        s2Dict[s2[l]] -= 1
+        if not s2Dict[s2[l]]:
+            del s2Dict[s2[l]]
+        l += 1
+        s2Dict[s2[r]] = s2Dict.get(s2[r], 0) + 1
+    if s1Dict == s2Dict:
+        return True
+    return False
 
 s1 = "adc"
 s2 = "dcda"
