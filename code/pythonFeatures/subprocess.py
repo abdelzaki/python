@@ -4,6 +4,7 @@
 
 
 import subprocess
+from time import sleep
 from typing import Text
 
 def linux():
@@ -19,5 +20,15 @@ def linux():
     print(p1.returncode)
     print(p1.stdout)
     print(p1.stderr)
+#
+# poll return None if the process is active otherwise return the code of the process
+#
+def pollSub():
+    procss = subprocess.Popen(["sleep", "2"])
     
-linux()
+    while  procss.poll() is None:
+        print("still active")
+    print(procss.poll())
+        
+pollSub()
+
