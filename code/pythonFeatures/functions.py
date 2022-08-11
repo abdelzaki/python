@@ -22,7 +22,7 @@ def avg(sum, first, *rest):
 def makeElement(**kargs):
     for v in kargs.values():
         print(" : ", v)
-
+    
 
 ###################################
 # function takes *var and k words #
@@ -50,3 +50,34 @@ def sum(x, y):
 
 def avg(callback, element):
     print(callback(*element))
+
+
+###################
+# function object #
+###################
+def implementHelp():
+    def functoinUseHelp():
+        """text for help"""
+        x = 1
+        return 234
+    thestring = functoinUseHelp.__doc__
+    thestring += " asda"
+    print(help(functoinUseHelp))
+    print("end")
+
+
+########################
+# First class function #
+# ######################
+def firstClsMethod():
+    def myfunction(n: int):
+        print("hi, i am ", n)
+        return n
+    x = map(myfunction, [0, 1, 2])
+    print(next(x))
+    print(next(x))
+    print(next(x))
+
+    # myList = list(map(myfunction, range(10)))
+    # print(myList)
+firstClsMethod()
