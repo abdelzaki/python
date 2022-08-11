@@ -28,11 +28,12 @@ def tuple():
 # nametuple #
 #############
 def nameTuple():
-    # it is a way to create tuple which u can access by name or by index
     from collections import namedtuple
-    City = namedtuple('nameifCity', ['name', 'country', 'people'])
+    City = namedtuple('nameOfCity', ['name', 'country', 'people'])
     cairo = City("ca", "Egy", 100)
-    print(cairo.country)
+    # it is a way to create tuple which u can access by name or by index
+    print(cairo.people + 1)
+    print(cairo)
 
 
 ###########################
@@ -52,25 +53,22 @@ def operationList():
     myArraywrongWay[0][2] = 12
     print(myArraywrongWay)
 
-import copy
+
 class clsx():
     def __init__(self) -> None:
         self.myname = "ahmed"
 
 
-
 def listobj():
-    obj1 :clsx = clsx
+    obj1: clsx = clsx
     obj1.myname = "abdel"
-    mylist : list[clsx] = list() 
+    mylist: list[clsx] = list()
     mylist.append(obj1)
     print(mylist[0].myname)
     obj1.myname = "ahmed"
-    #print(obj1.myname)    
+    # print(obj1.myname)
     print(mylist[0].myname)
     print(obj1.myname)
-
-listobj()
 
 
 ##############
@@ -88,6 +86,24 @@ def dictinaryOperation():
     print(hash(frozenset(tlist)))
 
 
-##############
-# dictionary cpmprehension#
-##############
+########
+# Sort #
+########
+def sortMethod():
+    # To sort in place use the method
+    myList = list()
+    myList.append(3)
+    myList.append(1)
+    print(myList)
+    myList.sort()
+    print(myList)
+    # to create a sorted copy of the list use sorted function
+    myList_1 = list()
+    myList_1.append(3)
+    myList_1.append(1)
+    listSorted = sorted(myList_1)
+    print(myList_1)
+    print(listSorted)
+
+
+sortMethod()
