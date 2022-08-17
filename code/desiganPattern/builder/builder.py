@@ -1,10 +1,8 @@
-"""
-Decouple creation from representation
+""" Decouple creation from representation
 it creats the object in multiple steps not in a single step like factory
 builder : create different parts of complex item 
 director : control building process using builder instance 
-it consists of director which uses the builder to build the object 
-"""
+it consists of director which uses the builder to build the object """
 
 
 def builderEasy():
@@ -38,7 +36,8 @@ def builderEasy():
             self.builder: BuilderOfProduct = BuilderOfProduct()
 
         def construct(self, price: int, weight: int, owner: str):
-            self.builder.configureOwner(owner).configurePrice(price).configureWeight(weight)
+            self.builder.configureOwner(owner).configurePrice(
+                price).configureWeight(weight)
 
         @property
         def product(self):
