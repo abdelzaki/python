@@ -22,7 +22,7 @@ def avg(sum, first, *rest):
 def makeElement(**kargs):
     for v in kargs.values():
         print(" : ", v)
-    
+
 
 ###################################
 # function takes *var and k words #
@@ -80,4 +80,30 @@ def firstClsMethod():
 
     # myList = list(map(myfunction, range(10)))
     # print(myList)
-firstClsMethod()
+
+
+def parameterValueAndReference():
+    """list is passed by reference while tuple is by value"""
+    def myfuntion(x, y):
+        x += y
+        print(x)
+    l1 = [1, 2]
+    l2 = [1, 2]
+    myfuntion(l1, l2)
+    print("list ", l1)
+    t1 = (1, 2)
+    t2 = (1, 2)
+    myfuntion(t1, t2)
+    print("set ", t1)
+
+    class clsWithDefaultList():
+        def __init__(self, input=[]) -> None:
+            self.input = input
+
+    obj = clsWithDefaultList()
+    obj.input.append(2)
+    obj2 = clsWithDefaultList()
+    print("obj2 has the same value as obj because reference was created", obj2.input)
+
+
+parameterValueAndReference()
