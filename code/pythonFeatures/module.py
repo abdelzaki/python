@@ -14,8 +14,9 @@ def moduleSearch():
     """to add path to python use append command"""
     import sys
     import os
-    module = os.path.join("c:\\", "test")
+    module = os.path.join("c:\\", "software", "....")
     sys.path.append(module)
+    module = os.path.join("c:\\", "test")
 
     import t2
     t2.modulFunction()
