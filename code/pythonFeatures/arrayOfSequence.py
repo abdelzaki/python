@@ -53,7 +53,18 @@ def operationList():
     myArraywrongWay[0][2] = 12
     print(myArraywrongWay)
 
+def copyList():
+    l1 = [1,2,3]
+    l2 = l1
+    print(l1 is l2)
+    l3 = list(l1)
+    print(l3 is l1 , l1 == l3)
 
+copyList() 
+    
+    
+    
+    
 class clsx():
     def __init__(self) -> None:
         self.myname = "ahmed"
@@ -106,4 +117,3 @@ def sortMethod():
     print(listSorted)
 
 
-sortMethod()
