@@ -23,21 +23,12 @@ def sequence():
     print(item[0])
 
 
-def privateMethod():
-    """Donot use this a way because it is not the standard. Python create an alias to the attribute by adding the name of the class to the method """
-    class PrivateCls():
-        def __init__(self) -> None:
-            self.__private = 12
-
-    privateObj = PrivateCls()
-    print(privateObj._PrivateCls__private)
-    # use .__dict__ to get to know what is accessible to you
-    print(privateObj.__dict__)
-
-
 def iterableFunction():
     """Iterable -> means it implements  __iter__  and u can call for loop on it. it should return object which implement next 
         iterator -> object with a state and implement next method and goes only forward   
+        steps:
+            - when the inerprreter needs to iterate over an object first then for __iter__ ,if it is not found it would search for __getitem__ with 
+            index 0 . If it is not found it would raise TypeError
     """
     nums: List[int] = [
         1, 3, 5, 7, 9]  # it is iterable means u can call iter on it which will return iterator
@@ -71,6 +62,26 @@ def iterableFunction():
         print(i)
 
 
+def generator():
+    """any function which has yield is a generator function means when it is called it would return a generator mean"""
+    def genabc():
+        print("hi 1")
+        yield 1
+        print("hi 2")
+        yield 2
+        print("hi 3")
+        yield 3
+
+    gen = genabc()
+    m = next(gen)
+    print(m)
+    m = next(gen)
+    print(m)
+
+
+generator()
+
+
 def containerFunction():
     """object which implement __contains__ ex element in container which would call container.__contains__(element)"""
     class Container():
@@ -82,4 +93,13 @@ def containerFunction():
     print(1 in container)
 
 
-containerFunction()
+def privateMethod():
+    """Donot use this a way because it is not the standard. Python create an alias to the attribute by adding the name of the class to the method """
+    class PrivateCls():
+        def __init__(self) -> None:
+            self.__private = 12
+
+    privateObj = PrivateCls()
+    print(privateObj._PrivateCls__private)
+    # use .__dict__ to get to know what is accessible to you
+    print(privateObj.__dict__)
