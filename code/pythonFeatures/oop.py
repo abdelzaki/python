@@ -59,11 +59,42 @@ class oper():
     def __add__(self, other):
         """return new instance """
         return oper(self.data + other)
+
     def print(self):
         print(self.data)
 
 
-myInstance = oper(23)
-(myInstance +2).print()
+""" Multiple inheritance """
 
-""""""
+
+def multpleInheritance():
+    """the class on the left has higher prioirtat than the class on the right if we used multiple inheritance """
+    class A:
+        def ping(self):
+            print("ping ", self)
+
+    class B(A):
+        def pong(self):
+            print("pong B ", self)
+
+    class C(A):
+        def pong(self):
+            print("PONG C", self)
+
+    class D(B, C):
+        def ping(self):
+            super().ping()
+            print("post-ping ", self)
+
+        def pingpong(self):
+            self.ping()
+            super().ping()
+            self.pong()
+            super().pong()
+            C.pong(self)
+
+    d = D()
+    d.pingpong()
+
+
+multpleInheritance()
