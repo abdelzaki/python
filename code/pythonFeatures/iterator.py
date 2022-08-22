@@ -1,3 +1,10 @@
+"""
+when we call for on an object, python would call iter on this object and then would call next on the return from the iter
+if u have yield the code would be excute only if u called next on the return of the function till yield and then moves when u call next 
+
+"""
+
+
 def iterF():
     items = [1, 2, 3]
     it = iter(items)
@@ -79,4 +86,18 @@ def chain():
     print(mydict["2"])
 
 
-chain()
+def usingYield():
+    def genFunc():
+        value = 0
+        print("before yield ")
+        while value < 10:
+            yield value
+            print("value ", value)
+            value += 1
+
+    gen = genFunc()
+    print(next(gen))
+    print(next(gen))
+
+
+usingYield()
